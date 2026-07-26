@@ -1,0 +1,20 @@
+module.exports = {
+  default: {
+    require: ['src/steps/**/*.ts'],
+    requireModule: ['ts-node/register'],
+    format: [
+      'json:reports/cucumber-report.json',
+      'html:reports/cucumber-report.html',
+      'progress-bar',
+      '@cucumber/pretty-formatter'
+    ],
+    formatOptions: {
+      snippetInterface: 'async-await'
+    },
+    parallel: 1,
+    strict: true,
+    dryRun: false,
+    failFast: false,
+    timeout: 60000
+  }
+};
